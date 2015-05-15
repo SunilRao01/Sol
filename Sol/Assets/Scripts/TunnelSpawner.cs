@@ -6,8 +6,12 @@ public class TunnelSpawner : MonoBehaviour
 {
 	public List<GameObject> tunnelPieces;
 
+	public float minZScale;
+	public float maxZScale;
+
 	void Start () 
 	{
+		Random.seed = (int)System.DateTime.Now.Ticks;
 		int choice = Random.Range(1, 3);
 		Vector3 objectScale;
 		GameObject tempTunnelPiece;
@@ -23,11 +27,13 @@ public class TunnelSpawner : MonoBehaviour
 
 		// Randomize z-scale
 		objectScale = tempTunnelPiece.transform.localScale;
-		objectScale.z = Random.Range(30, 151);
+		objectScale.z = Random.Range(minZScale, maxZScale);
 		tempTunnelPiece.transform.localScale = objectScale;
 
 		// Randomize rotation
 		tempTunnelPiece.transform.Rotate(new Vector3(0, 0, Random.Range(0, 361)));
+
+		Debug.Log("Choice: " + choice.ToString());
 	}
 
 	// z-scale range: 10-150
@@ -42,6 +48,7 @@ public class TunnelSpawner : MonoBehaviour
 	{
 		if (other.CompareTag("TunnelPiece"))
 		{
+			Random.seed = (int)System.DateTime.Now.Ticks;
 			int choice = Random.Range(1, 3);
 			Vector3 objectScale;
 			GameObject tempTunnelPiece;
@@ -57,11 +64,13 @@ public class TunnelSpawner : MonoBehaviour
 
 			// Randomize z-scale
 			objectScale = tempTunnelPiece.transform.localScale;
-			objectScale.z = Random.Range(30, 151);
+			objectScale.z = Random.Range(minZScale, maxZScale);
 			tempTunnelPiece.transform.localScale = objectScale;
 
 			// Randomize rotation
 			tempTunnelPiece.transform.Rotate(new Vector3(0, 0, Random.Range(0, 361)));
+
+			Debug.Log("Choice: " + choice.ToString());
 		}
 	}
 }

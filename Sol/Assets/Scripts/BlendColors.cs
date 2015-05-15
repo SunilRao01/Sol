@@ -90,7 +90,7 @@ public class BlendColors : MonoBehaviour
 
 			if (randomColors)
 			{
-				newColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), 1);
+				newColor = new Color(Random.Range(0.5f, 1.0f), Random.Range(0.5f, 1.0f), Random.Range(0.5f, 1.0f), 1);
 			}
 
 			if (customAlpha)
