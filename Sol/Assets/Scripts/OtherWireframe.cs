@@ -20,12 +20,6 @@ public class OtherWireframe : MonoBehaviour {
 	public Material lineMaterial ;
 	//private MeshRenderer meshRenderer; 
 	
-	/*
-     ████████       ▄▀▀■  ▀▀█▀▀  ▄▀▀▄  █▀▀▄  ▀▀█▀▀ 
-     ████████       ▀■■▄    █    █■■█  █▀▀▄    █   
-     ████████       ■▄▄▀    █    █  █  █  █    █   
-     */
-	
 	
 	void Start () {
 		//meshRenderer = gameObject.GetComponent<MeshRenderer>();
@@ -82,12 +76,6 @@ public class OtherWireframe : MonoBehaviour {
 	{
 		return gameObject.transform.TransformPoint(vec);
 	}
-	
-	/*
-     ████████       █  █  █▀▀▄  █▀▀▄  ▄▀▀▄  ▀▀█▀▀  █▀▀▀ 
-     ████████       █  █  █▀▀   █  █  █■■█    █    █■■  
-     ████████       ▀▄▄▀  █     █▄▄▀  █  █    █    █▄▄▄ 
-     */
 	
 	
 	void OnRenderObject () {

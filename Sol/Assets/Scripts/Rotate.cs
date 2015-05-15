@@ -20,11 +20,11 @@ public class Rotate : MonoBehaviour {
 		{
 			transform.Rotate(Vector3.right * rotationalSpeed);
 		}
-		else if (yDirection)
+		if (yDirection)
 		{
 			transform.Rotate(Vector3.up * rotationalSpeed);
 		}
-		else if (zDirection)
+		if (zDirection)
 		{
 			transform.Rotate(Vector3.forward * rotationalSpeed);
 		}
