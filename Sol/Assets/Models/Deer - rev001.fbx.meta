@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: d6fb8a05ad55d884a9edce26ead5222b
+timeCreated: 1431677872
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Circle
+    100004: com
+    100006: //RootNode
+    100008: Deer Armature
+    100010: Deer Stag
+    100012: ears.1.L
+    100014: ears.1.R
+    100016: ears.2.L
+    100018: ears.2.L_end
+    100020: ears.2.R
+    100022: ears.2.R_end
+    100024: foreleg.femur.L
+    100026: foreleg.femur.R
+    100028: foreleg.hoof.IK-upper.L
+    100030: foreleg.hoof.IK-upper.L_end
+    100032: foreleg.hoof.IK-upper.R
+    100034: foreleg.hoof.IK-upper.R_end
+    100036: foreleg.hoof.IK.L
+    100038: foreleg.hoof.IK.R
+    100040: foreleg.hoof.L
+    100042: foreleg.hoof.L_end
+    100044: foreleg.hoof.R
+    100046: foreleg.hoof.R_end
+    100048: foreleg.tarsals.L
+    100050: foreleg.tarsals.R
+    100052: foreleg.tibia.L
+    100054: foreleg.tibia.R
+    100056: head
+    100058: head.IK
+    100060: head.IK_end
+    100062: hindleg.femur.L
+    100064: hindleg.femur.R
+    100066: hindleg.hoof.IK.L
+    100068: hindleg.hoof.IK.L_end
+    100070: hindleg.hoof.IK.R
+    100072: hindleg.hoof.IK.R_end
+    100074: hindleg.hoof.L
+    100076: hindleg.hoof.L_end
+    100078: hindleg.hoof.R
+    100080: hindleg.hoof.R_end
+    100082: hindleg.tibia.L
+    100084: hindleg.tibia.R
+    100086: Lamp
+    100088: neck
+    100090: pelvis
+    100092: ribs
+    100094: spine
+    100096: Standard Human Form Height
+    400000: Camera
+    400002: Circle
+    400004: com
+    400006: //RootNode
+    400008: Deer Armature
+    400010: Deer Stag
+    400012: ears.1.L
+    400014: ears.1.R
+    400016: ears.2.L
+    400018: ears.2.L_end
+    400020: ears.2.R
+    400022: ears.2.R_end
+    400024: foreleg.femur.L
+    400026: foreleg.femur.R
+    400028: foreleg.hoof.IK-upper.L
+    400030: foreleg.hoof.IK-upper.L_end
+    400032: foreleg.hoof.IK-upper.R
+    400034: foreleg.hoof.IK-upper.R_end
+    400036: foreleg.hoof.IK.L
+    400038: foreleg.hoof.IK.R
+    400040: foreleg.hoof.L
+    400042: foreleg.hoof.L_end
+    400044: foreleg.hoof.R
+    400046: foreleg.hoof.R_end
+    400048: foreleg.tarsals.L
+    400050: foreleg.tarsals.R
+    400052: foreleg.tibia.L
+    400054: foreleg.tibia.R
+    400056: head
+    400058: head.IK
+    400060: head.IK_end
+    400062: hindleg.femur.L
+    400064: hindleg.femur.R
+    400066: hindleg.hoof.IK.L
+    400068: hindleg.hoof.IK.L_end
+    400070: hindleg.hoof.IK.R
+    400072: hindleg.hoof.IK.R_end
+    400074: hindleg.hoof.L
+    400076: hindleg.hoof.L_end
+    400078: hindleg.hoof.R
+    400080: hindleg.hoof.R_end
+    400082: hindleg.tibia.L
+    400084: hindleg.tibia.R
+    400086: Lamp
+    400088: neck
+    400090: pelvis
+    400092: ribs
+    400094: spine
+    400096: Standard Human Form Height
+    2300000: Circle
+    2300002: Standard Human Form Height
+    3300000: Circle
+    3300002: Standard Human Form Height
+    4300000: Circle
+    4300002: Deer Stag
+    4300004: Standard Human Form Height
+    7400000: Deer Armature|PoseLib
+    9500000: //RootNode
+    13700000: Deer Stag
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

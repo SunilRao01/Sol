@@ -7,14 +7,12 @@ public class OtherWireframe : MonoBehaviour {
 	public bool render_lines_1st = false;
 	public bool render_lines_2nd = false;
 	public bool render_lines_3rd = false;
-	public Color lineColor = new Color (0.0f, 1.0f, 1.0f);
-	public Color backgroundColor = new Color (0.0f, 0.5f, 0.5f);
+	public Color lineColor;
 	public bool ZWrite = true;
 	public bool AWrite = true;
 	public bool blend = true;
 	public float lineWidth = 3;
-	public int size = 0;
-	
+
 	private Vector3[] lines ;
 	private ArrayList lines_List ;
 	public Material lineMaterial ;
@@ -56,7 +54,6 @@ public class OtherWireframe : MonoBehaviour {
 		//lines_List.CopyTo(lines);//arrays are faster than array lists
 		lines = (Vector3[]) lines_List.ToArray(typeof(Vector3));
 		lines_List.Clear();//free memory from the arraylist
-		size = lines.Length;
 	}
 	
 	// to simulate thickness, draw line as a quad scaled along the camera's vertical axis.
@@ -79,17 +76,17 @@ public class OtherWireframe : MonoBehaviour {
 	
 	
 	void OnRenderObject () {
-		GetComponent<Renderer>().enabled=render_mesh_normaly;
+		GetComponent<Renderer>().enabled = render_mesh_normaly;
 		if (lines == null || lines.Length < lineWidth) {
-			print("No lines");
+			Debug.Log("No lines");
 		} 
 		else
 		{
 			lineMaterial.SetPass(0);
-			GL.Color(lineColor);
 			
 			if (lineWidth == 1) {
 				GL.Begin(GL.LINES);
+				GL.Color(lineColor);
 				for(int i = 0; i+2 < lines.Length; i+=3)
 				{
 					Vector3 vec1 = to_world(lines[i]);
