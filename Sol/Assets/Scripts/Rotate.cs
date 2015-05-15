@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Rotate : MonoBehaviour {
 
+	public bool negative;
 	public bool xDirection;
 	public bool yDirection;
 	public bool zDirection;
@@ -18,15 +19,36 @@ public class Rotate : MonoBehaviour {
 	{
 		if (xDirection)
 		{
-			transform.Rotate(Vector3.right * rotationalSpeed);
+			if (negative)
+			{
+				transform.Rotate(-Vector3.right * rotationalSpeed);
+			}
+			else
+			{
+				transform.Rotate(Vector3.right * rotationalSpeed);
+			}
 		}
 		if (yDirection)
 		{
-			transform.Rotate(Vector3.up * rotationalSpeed);
+			if (negative)
+			{
+				transform.Rotate(-Vector3.up * rotationalSpeed);
+			}
+			else
+			{
+				transform.Rotate(Vector3.up * rotationalSpeed);
+			}
 		}
 		if (zDirection)
 		{
-			transform.Rotate(Vector3.forward * rotationalSpeed);
+			if (negative)
+			{
+				transform.Rotate(-Vector3.forward * rotationalSpeed);
+			}
+			else
+			{
+				transform.Rotate(Vector3.forward * rotationalSpeed);
+			}
 		}
 	}
 }

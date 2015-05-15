@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour 
 {
 	public float movementForce;
 	public float maxSpeed;
+
+	public int healthValue;
+	public Text healthLabel;
 
 	void Start () 
 	{
@@ -13,6 +17,9 @@ public class Player : MonoBehaviour
 	
 	void Update () 
 	{
+		// Keep health label updated
+		healthLabel.text = healthValue.ToString();
+
 		handleMovement();
 	}
 
