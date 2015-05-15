@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
 		healthLabel.text = healthValue.ToString();
 
 		handleMovement();
+
+
 	}
 
 	void handleMovement()
@@ -47,5 +49,10 @@ public class Player : MonoBehaviour
 				GetComponent<Rigidbody>().AddForce(-Vector3.up * movementForce);
 			}
 		}
+	}
+
+	public void setColor(Color inputColor)
+	{
+		GetComponent<OtherWireframe>().lineColor = inputColor;
 	}
 }
