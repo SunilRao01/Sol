@@ -5,6 +5,9 @@ public class TunnelPiece : MonoBehaviour
 {
 	public float movementSpeed;
 
+	public float minZScale;
+	public float maxZScale;
+
 	void Start () 
 	{
 		

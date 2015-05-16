@@ -35,6 +35,7 @@ public class AudioSpectrum : MonoBehaviour {
         bool midResult = midFreq.addSample(midVal);
         bool hiResult = hiFreq.addSample(HiVal);
 
+		/*
 		if (Application.loadedLevelName == "Sandbox") {
 			if (midResult) {
 				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().setColor(Color.red);
@@ -43,7 +44,7 @@ public class AudioSpectrum : MonoBehaviour {
 				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().setColor(Color.blue);
 			}
 		}
-
+		*/
         //make check
         if(!lowFreq.filling){
             if(lowResult){

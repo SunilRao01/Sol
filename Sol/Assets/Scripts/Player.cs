@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
 		}
 	}
 
+
+
 	public void setColor(Color inputColor)
 	{
 		GetComponent<OtherWireframe>().lineColor = inputColor;
