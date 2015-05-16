@@ -9,10 +9,23 @@ public class Rotate : MonoBehaviour {
 	public bool zDirection;
 
 	public float rotationalSpeed;
+	public bool randomRotationDirection;
 
 	void Start () 
 	{
-	
+		if (randomRotationDirection)
+		{
+			int choice = Random.Range(1, 3);
+
+			if (choice == 1)
+			{
+				negative = true;
+			}
+			else
+			{
+				negative = false;
+			}
+		}
 	}
 	
 	void Update () 
