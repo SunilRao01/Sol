@@ -26,12 +26,4 @@ public class Blockade : MonoBehaviour
 			GetComponent<Rigidbody>().AddForce(-Vector3.forward * movementForce);
 		}
 	}
-
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag("Player"))
-		{
-			other.GetComponent<Player>().healthValue--;
-		}
-	}
 }
