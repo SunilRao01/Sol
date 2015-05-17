@@ -24,6 +24,10 @@ public class SpiralEffect : MonoBehaviour
 		{
 			negative = true;
 		}
+
+		// Random rotation and movement speed upon instantion
+		rotationSpeed = Random.Range(0.5f, rotationSpeed+3);
+		movementSpeed = Random.Range(0.5f, movementSpeed+3);
 	}
 
 	void Update () 
