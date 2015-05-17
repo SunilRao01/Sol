@@ -7,16 +7,32 @@ public class RealtimeLines : MonoBehaviour
 	public List<Vector3> vertexList;
 	public float lineDrawDelay;
 
+	private int deleteCounter;
+	public int deleteTime;
+	public Color lineColor;
+
 	void Start () 
 	{
 		vertexList.Add(transform.position);
 
-		StartCoroutine(waitThenVertex());
+		//StartCoroutine(waitThenVertex());
+	}
+
+	void Update()
+	{
+		vertexList.Add(transform.position);
+
+		deleteCounter++;
+		if (deleteCounter % deleteTime == 0)
+		{
+			vertexList.RemoveAt(0);
+		}
 	}
 
 	void OnRenderObject()
 	{
 		GL.Begin(GL.LINES);
+		GL.Color(lineColor);
 		{
 			for (int i = 0; i < vertexList.Count-1; i++)
 			{
@@ -33,10 +49,6 @@ public class RealtimeLines : MonoBehaviour
 		{
 			yield return new WaitForSeconds(lineDrawDelay);
 
-			Vector3 newLineVertex;
-			newLineVertex.x = transform.position.x - vertexList[vertexList.Count-1].x;
-			newLineVertex.y = transform.position.y - vertexList[vertexList.Count-1].y;
-			newLineVertex.z = transform.position.z - vertexList[vertexList.Count-1].z;
 			vertexList.Add(transform.position);
 		}
 	}

@@ -22,6 +22,7 @@ public class BlendColors : MonoBehaviour
 	public bool isImage;
 	public bool isMaterial;
 	public bool wireframeColor;
+	public bool wireframeTunnelEffectColor;
 
 	public float introDelay;
 	private bool enableBlend;
@@ -121,6 +122,10 @@ public class BlendColors : MonoBehaviour
 			{
 				currentColor = GetComponent<OtherWireframe>().lineColor;
 			}
+			else if (wireframeTunnelEffectColor)
+			{
+				currentColor = GetComponent<RealtimeLines>().lineColor;
+			}
 			else if (isMaterial)
 			{
 				currentColor = GetComponent<Renderer>().material.color;
@@ -143,6 +148,10 @@ public class BlendColors : MonoBehaviour
 		else if (wireframeColor)
 		{
 			GetComponent<OtherWireframe>().lineColor = Color.Lerp(currentColor, newColor, colorCount);
+		}
+		else if (wireframeTunnelEffectColor)
+		{
+			GetComponent<RealtimeLines>().lineColor = Color.Lerp(currentColor, newColor, colorCount);
 		}
 		else if (isMaterial)
 		{
