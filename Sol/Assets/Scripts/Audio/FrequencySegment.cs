@@ -13,12 +13,26 @@ public class FrequencySegment  {
     private float minVal = 3.0f;    //might not be used
     private float maxVal = -3.0f;   //might not be used
     private int sCounter = 0;
+
+    private int loIndex = 0;
+    private int hiIndex = 0;
     
     public bool filling = true;
     public float curVal = 0.0f;
 
+    public FrequencySegment(int loIndex, int hiIndex) {
+        this.loIndex = loIndex;
+        this.hiIndex = hiIndex;
+    }
+
     //returns true if significant change
-    public bool addSample(float val) {
+    public bool add(float[] samples) {
+        float sum = getSum(samples);
+        return addSample(sum);
+    }
+
+    //returns true if significant change
+    private bool addSample(float val) {
         curVal = val;
 
         if (sCounter >= SAMPLE_SIZE) {
@@ -65,7 +79,6 @@ public class FrequencySegment  {
             return false;
         }
 
-        //Debug.Log("Cur: " + curVal + " AVG: " + average);
         return false;
     }
 
@@ -84,4 +97,12 @@ public class FrequencySegment  {
         return ret;
     }
 
+    private float getSum(float[] samples) {
+        float sum = 0.0f;
+        for (int i = loIndex; i <= hiIndex; i++) {
+            sum += samples[i];
+        }
+
+        return sum;
+    }
 }
