@@ -107,6 +107,7 @@ public class OtherWireframe : MonoBehaviour {
 				}
 			} else {
 				GL.Begin(GL.QUADS);
+				GL.Color(lineColor);
 				for(int i = 0; i+2 < lines.Length; i+=3) {
 					Vector3 vec1 = to_world(lines[i]);
 					Vector3 vec2 = to_world(lines[i+1]);
