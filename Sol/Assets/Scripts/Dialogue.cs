@@ -78,7 +78,6 @@ public class Dialogue : MonoBehaviour
 
 				// Wait a bit before displaying the next letter
 				yield return new WaitForSeconds (letterPause);
-				Debug.Log("Sound triggered for letter '" + letter.ToString() + "'!");
 
 			}
 

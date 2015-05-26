@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Player : Dancer 
+public class Player : MonoBehaviour, AudioProcessor.AudioCallbacks 
 {
 	public bool godMode;
 	public float movementForce;
@@ -14,12 +14,16 @@ public class Player : Dancer
 	private bool isRotatingVertical;
 	private bool isRotatingHorizontal;
 
+	private bool beatOn;
+
 	void Start () 
 	{
 		healthLabel.text = healthValue.ToString();
 
 		// DANCER
-		init();
+		//init();
+		AudioProcessor processor = GameObject.FindObjectOfType<AudioProcessor>();
+		processor.addAudioCallback(this);
 	}
 	
 	void Update () 
@@ -27,6 +31,32 @@ public class Player : Dancer
 		handleMovement();
 	}
 
+	public void onOnbeatDetected()
+	{
+		Debug.Log("Beat!!!");
+
+		if (beatOn)
+		{
+			GetComponent<OtherWireframe>().lineWidth = 15;
+			GetComponent<BlendColors>().enabled = false;
+			GetComponent<OtherWireframe>().lineColor = Color.green;
+
+			beatOn = false;
+		}
+		else
+		{
+			GetComponent<OtherWireframe>().lineWidth = 1;
+			GetComponent<BlendColors>().enabled = true;
+
+			beatOn = true;
+		}
+	}
+	
+	public void onSpectrum(float[] spectrum)
+	{
+		
+	}
+	
 	void handleMovement()
 	{
 		// TODO: Use iTween to change head of ship for movement
@@ -60,7 +90,7 @@ public class Player : Dancer
 		GetComponent<OtherWireframe>().lineColor = inputColor;
 	}
 
-
+	/*
 	// DANCE
 	public override void dance (bool results)
 	{
@@ -78,7 +108,7 @@ public class Player : Dancer
 			GetComponent<BlendColors>().enabled = true;
 		}
 	} 
-
+	*/
 
 	void OnTriggerEnter(Collider other)
 	{
