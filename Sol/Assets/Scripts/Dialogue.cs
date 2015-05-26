@@ -28,6 +28,8 @@ public class Dialogue : MonoBehaviour
 
 	private GameObject enemyObject;
 
+	public List<GameObject> dialogueObjects;
+
 	void Start ()
 	{
 		iterator = 0;
@@ -88,74 +90,11 @@ public class Dialogue : MonoBehaviour
 		}
 
 
-	}
-
-	IEnumerator fleeRoutine(bool canFlee)
-	{
-		// Iterate through flee dialogue
-		while (iterator < dialogueList.Count)
+		for (int i = 0; i < dialogueObjects.Count; i++)
 		{
-			dialogueText = "";
-			currentDialogue = dialogueList[iterator];
-			scrollComplete = false;
-			int count = 1;
-
-			foreach (char letter in currentDialogue.ToCharArray())
-			{
-				dialogueText += letter;
-
-				if (GetComponent<AudioSource>() && count % 1 == 0)
-				{
-					GetComponent<AudioSource>().Play();
-					yield return 0;
-				}
-				yield return new WaitForSeconds (letterPause);
-
-				count++;
-			}
-
-			yield return new WaitForSeconds(1);
-
-			scrollComplete = true;
-			iterator++;
+			dialogueObjects[i].SetActive(false);
 		}
 	}
-
-	IEnumerator displayAttack()
-	{
-		iterator = 0;
-
-		// Display attack dialogue
-		while (iterator < dialogueList.Count)
-		{
-			dialogueText = "";
-			currentDialogue = dialogueList[iterator];
-			scrollComplete = false;
-			int count = 1;
-
-			foreach (char letter in currentDialogue.ToCharArray())
-			{
-				dialogueText += letter;
-
-				if (GetComponent<AudioSource>() && count % 1 == 0)
-				{
-					GetComponent<AudioSource>().Play();
-					yield return 0;
-				}
-				yield return new WaitForSeconds (letterPause);
-
-				count++;
-			}
-
-			yield return new WaitForSeconds(1);
-
-			scrollComplete = true;
-			iterator++;
-		}
-
-		// Checks the speed stat of player/enemy to see who goes next
-	}
-
 
 
 
