@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SimpleLights : Dancer {
     Light light;
+    int count = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,11 @@ public class SimpleLights : Dancer {
     public override void dance(bool results) {
         if (results) {
             light.intensity = 8;
+
+            if (segment == 0) {
+                Debug.Log(count);
+                 count++;
+            }
         }
         else {
             light.intensity = 0;

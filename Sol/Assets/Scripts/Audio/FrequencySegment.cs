@@ -12,6 +12,7 @@ public class FrequencySegment  {
     private float sum = 0.0f;
     private float minVal = 3.0f;    //might not be used
     private float maxVal = -3.0f;   //might not be used
+    private float prevVal = 0.0f;
     private int sCounter = 0;
 
     private int loIndex = 0;
@@ -56,30 +57,27 @@ public class FrequencySegment  {
         samples[sCounter] = curVal;
 
         //update min, max
-        if (samples[sCounter] > maxVal) {
-            maxVal = samples[sCounter];
-        }
-        if (minVal < samples[sCounter]) {
-            minVal = samples[sCounter];
-        }
+        //if (samples[sCounter] > maxVal) {
+        //    maxVal = samples[sCounter];
+        //}
+        //if (minVal < samples[sCounter]) {
+        //    minVal = samples[sCounter];
+        //}
 
         //update counter
         sCounter++;
 
         //make check
+        bool result = false;
         if (!filling) {
             if (curVal > average) {
-                if (curVal > average + (CalculateStdDev() * 1.5)) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
+                if (curVal > average + (CalculateStdDev() * 1.5))
+                    result = true;
             }
-            return false;
         }
 
-        return false;
+        prevVal = curVal;
+        return result;
     }
 
     private float CalculateStdDev() {
@@ -100,7 +98,16 @@ public class FrequencySegment  {
     private float getSum(float[] samples) {
         float sum = 0.0f;
         for (int i = loIndex; i <= hiIndex; i++) {
-            sum += samples[i];
+            float curVal = samples[i];
+            sum += curVal;
+
+            //update min, max
+            if (curVal > maxVal) {
+                maxVal = curVal;
+            }
+            if (curVal < minVal) {
+                minVal = curVal;
+            }
         }
 
         return sum;
