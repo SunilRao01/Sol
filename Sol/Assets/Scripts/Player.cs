@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour 
+public class Player : Dancer 
 {
 	public bool godMode;
 	public float movementForce;
@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
 	void Start () 
 	{
 		healthLabel.text = healthValue.ToString();
+
+		// DANCER
+		init();
 	}
 	
 	void Update () 
@@ -56,6 +59,26 @@ public class Player : MonoBehaviour
 	{
 		GetComponent<OtherWireframe>().lineColor = inputColor;
 	}
+
+
+	// DANCE
+	public override void dance (bool results)
+	{
+
+
+		if (results)
+		{
+			GetComponent<OtherWireframe>().lineWidth = 15;
+			GetComponent<BlendColors>().enabled = false;
+			GetComponent<OtherWireframe>().lineColor = Color.green;
+		}
+		else
+		{
+			GetComponent<OtherWireframe>().lineWidth = 1;
+			GetComponent<BlendColors>().enabled = true;
+		}
+	} 
+
 
 	void OnTriggerEnter(Collider other)
 	{
